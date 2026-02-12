@@ -1,61 +1,71 @@
-<h1> Home Cybersecurity Lab Simulation
+<h1> Wazuh Security Monitoring
 </h1>
 
 
 
-<h2>Description</h2>
-Create a fully segmented, enterprise style environment for hands-on learning, including attack tools, defensive tools, vulnerable machines, Active Directory, and Docker based services. The network architecture behind a pfSense firewall, creating VLANs, building and configuring pfSense, Kali Linux, and Ubuntu Server with Docker and Portainer.
+<h2>Lab Environment Overview</h2>
+This lab demonstrates how attackers perform password based SSH attacks using tools like Hydra and how security teams can detect and respond to these attacks using a Security Information and Event Management (SIEM) system. The environment consists of three core components working together to simulate a complete attack and defend scenario.
+<br />
+<br />
+
+<br /> Active Agents: <br />
+<img src="https://imgur.com/U4Ry2nZ.jpg"  height="80%" width="80%">
+<br /> Agent 001 (Kali) - Kali GNU/Linux 2025.1 - Attacker machine <br />
+<br />Agent 004 (Ubuntu-Desktop) - Ubuntu 24.04.3 LTS - Target/Victim machine<br />
+<br />Cluster: node01<br />
+<br />Version: v4.14.2<br />
+<br />
+<br />
+
 <br />
 <h2> Tech Stack</h2>
 
 Proxmox VE : https://www.virtualbox.org/wiki/Downloads](https://www.proxmox.com/en/downloads
 <br />
+<br />
 Kali Linux :                             https://www.kali.org/get-kali/#kali-installer-images
 <br />
-Windows 10 :                             https://www.microsoft.com/en-ca/software-download/windows10iso
 <br />
-Windows 11 :                            https://www.microsoft.com/en-us/software-download/windows11
-<br />
-Window Server 22 :                       https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022
-<br />
-Ubuntu :                                https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview
-<br />
-Ubuntu Server :     https://ubuntu.com/download/server
-<br />
-Docker(install on Kali) :                 https://www.kali.org/docs/containers/installing-docker-on-kali/
-<br />
-Portainer.io (install on Docker) :       https://docs.portainer.io/start/install-ce/server/docker/linux
-<br />
+Ubuntu Desktop :                                https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview
+
 Wazuh :                                https://documentation.wazuh.com/current/deployment-options/virtual-machine/virtual-machine.html
 <br />
-Metasploitable :         https://koromatech.com/how-to-install-metasploitable-2-on-a-proxmox-vm-step-by-step-walkthrough/
+<h2> Brute Force Detection</h2>
 <br />
-pfSense :          https://www.pfsense.org/download/
+Using Hydra Simulate SSH brute force attack and detect it with Wazuh.
+<br />
+<br />
+<br /> -Install HYDRA on my Kali system <br />
+<br />- Created  a small password list<br />
+<br />
+<br />
+<img src="https://imgur.com/UeAnw3B.jpg"  height="80%" width="80%">
+<br />
+<br />
+<br />On Wazuh Dashboard, filter for Multiple authentication failures and check for Possible SSH brute force attack. <br />
+<br />
+<br />
+ - Multiple authentication failures (rule.id:5710)
+<img src="https://imgur.com/AItOkyC.jpg"  height="80%" width="80%">
 
-<h2></h2>
-<br />
-<img src="https://imgur.com/L7acb1x.jpg"  height="80%" width="80%">
-<br />
-<br />
-<img src="https://imgur.com/ajc26sg.jpg"  height="80%" width="80%">
-<br />
-<br />
-<img src="https://imgur.com/BHhJuDb.jpg"  height="80%" width="80%">
-<br /><br />
-<img src="https://imgur.com/LFo3M6t.jpg"  height="80%" width="80%">
-<br /><br />
-<img src="https://imgur.com/NC5uCfL.jpg"  height="80%" width="80%">
+<img src="https://imgur.com/JjpuPrc.jpg"  height="80%" width="80%">
+<br />- Possible SSH brute force attack (rule.id:5712) <br />
+<img src="https://imgur.com/WX8VHs6.jpg"  height="80%" width="80%">
+<img src="https://imgur.com/iPoux4P.jpg"  height="80%" width="80%">
 <br />
 <br />
 <br />
 
 <p align="center">
 <br/>
-<h1> pfSense firewall installed and configured with VLANs, DHCP, rules, and Kali Linux installed and connected.
-</h1>
+<h1> File Integrity Monitoring </h1>
+ 
 <br />
+- On Ubuntu, monitor critical files and detect unauthorized changes
 <br />
-<img src="https://imgur.com/MCJudkD.jpg"  height="80%" width="80%">
+<img src="https://imgur.com/r1X23Tn.jpg"  height="80%" width="80%">
+<img src="https://imgur.com/nNWqgcZ.jpg"  height="80%" width="80%">
+
 <br />
 <br />
  <h1>Ubuntu Server, Docker, Portainer installed, verified, and accessible
