@@ -74,16 +74,5 @@ Using Hydra Simulate SSH brute force attack and detect it with Wazuh.
 
 <p align="center">
 <br/>
-<h1>Privilege Escalation Detection </h1>
- 
-<br />
-- On Ubuntu, monitor critical files and detect unauthorized changes
-<br />
-<img src="https://imgur.com/r1X23Tn.jpg"  height="80%" width="80%">
-<img src="https://imgur.com/nNWqgcZ.jpg"  height="80%" width="80%">
-
-
-<br />
-<br />
 
 
